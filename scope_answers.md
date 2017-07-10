@@ -87,3 +87,86 @@ firstIdea();
 secondIdea();
 
 firstIdea returns the value of its local variable of decisions but secoundIdea returns undefined beacuse it can't access the value fo decision as its being declared inside firstIdea; these functions are on the same 'level' so can't access eachothers local variables; and the gobal varibale of decision is undefined
+
+
+Exercise 2
+
+1.
+function buildHouse(address) {
+  // ... house gets built
+  return 'Building house at ' + address;
+}
+buildHouse('123 Happy St.');
+console.log(address);
+
+console log returns error beacuse address is only avalialble inside the function buildHouse
+
+Rewrite:
+var address = '123 Happy St.';
+
+function buildHouse(address) {
+  // ... house gets built
+  return 'Building house at ' + address;
+}
+buildHouse('123 Happy St.');
+console.log(address);
+
+2.
+var determined = false;
+if (determined) {
+  var smoothie = 'strawberry banana';
+}
+console.log(smoothie);
+
+since blocks don't have there own scope, smoothie is still global here however, since determined is set to false, the if statement dosen't run and the value of smoothie is undefined, but smoothie is still being declared as a variable (same level as determined) but not assigned the string. So logging smoothie returns undefined rather than erroring
+
+Rewrite:
+
+var determined = false;
+if (determined === true) {
+  var smoothie = 'strawberry banana';
+} else {
+  var smoothie = 'I don\'t know what I want'
+}
+console.log(smoothie);
+
+
+3.
+for (var index = 0; index < 5; index++) {
+  // ...
+}
+
+console.log(index);
+
+index is now = 5
+
+Rewrite:
+
+function count {
+  for (var index = 0; index < 5; index++) {
+    // ...
+  }
+}
+
+console.log(index);
+
+index is now only accessible inside count
+
+4.
+var items = ['glasses', 'toothpaste', 'wallet'];
+items.forEach(function(item) {
+  var lastItem = item;
+});
+console.log(lastItem);
+
+forEach is a function (and is using an anoymus function) so lastItem is only avalialble inside the anoymus function
+
+Rewrite:
+
+var items = ['glasses', 'toothpaste', 'wallet'];
+for (item = 0; item < items.length; item++  ) {
+  var lastItem = item;
+};
+console.log(lastItem);
+
+log call is now in the same scope as lastItem since it is now inside a block rather than in a fuction; lastItem is logged as the index of the last element in the items array
