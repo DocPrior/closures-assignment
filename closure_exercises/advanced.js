@@ -9,7 +9,10 @@ clickCounter.addEventListener('click', getClickCountHandler());
 
 // Problem 1: fill in this function
 function getClickCountHandler() {
-
+  var count = 0;
+  return function() {
+    alert('you clicked ' + ++count +' times');
+  }
 }
 
 
@@ -29,4 +32,12 @@ document.addEventListener('keydown', getSecretKeyCodeEventHandler());
 function getSecretKeyCodeEventHandler() {
   // FILL THIS IN
 
+  var eventArray = [];
+    return function(keyPress) {
+      var keyPress = keyPress.keyCode;
+      eventArray.push(keyPress);
+      if (keyPress === 13) {
+        alert(eventArray);
+     }
+    }
 }
