@@ -52,7 +52,7 @@ function doChores() {
 
 doChores(); // calling doChores(), which then calls reportActivity()
 
-the job of the function is to declare chore again so the value of chore is now sneack out becauses declearing chore inside the function makes the variable into a local varibale of that function rather than global, calling the function returns sneak out
+the job of the function is to declare chore again so the value of chore is now sneack out becauses declearing chore inside the function makes the variable into a local varibale of that function, calling the function returns sneak out
 
 var letter;
 var contents = 'Looking for gold';
@@ -70,7 +70,7 @@ function getMail() {
 letter = getMail();
 console.log(letter);
 
- the value of contents declared inside of changeContents is not avaible to getMail because changeContentss is nested inside it; thus when it returns contents it returns the global variable value of contents as 'looking for gold'; in other words getMail can't access variables inside changeContents
+ the value of contents declared inside of changeContents is not avaible to getMail because changeContentss is nested inside it; thus when it returns contents it returns the higher level variable value of contents as 'looking for gold'; in other words getMail can't access variables inside changeContents
 
  var decision;
 
@@ -118,7 +118,7 @@ if (determined) {
 }
 console.log(smoothie);
 
-since blocks don't have there own scope, smoothie is still global here however, since determined is set to false, the if statement dosen't run and the value of smoothie is undefined, but smoothie is still being declared as a variable (same level as determined) but not assigned the string. So logging smoothie returns undefined rather than erroring
+since blocks don't have there own scope, smoothie is still a higher level variable  here however, since determined is set to false, the if statement dosen't run and the value of smoothie is undefined, but smoothie is still being declared as a variable (same level as determined) but not assigned the string. So logging smoothie returns undefined rather than erroring
 
 Rewrite:
 

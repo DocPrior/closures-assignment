@@ -4,7 +4,13 @@
 
 var personToVisit = "best friend";
 // YOUR CODE HERE ------------------------
-
+var flyTo = getSetDestinationFunction(personToVisit)
+function getSetDestinationFunction(personToVisit){
+  var personToVisit = 'best friend';
+  return function(destination){
+    console.log('Enjoy your visti to ' + destination + ' to visit your ' + personToVisit + '.');
+  }
+}
 
 
 // ---------------------------------------

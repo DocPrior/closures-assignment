@@ -4,7 +4,12 @@ var printNumberThree = getPrintNumberFunction(3);
 var printNumberFive = getPrintNumberFunction(5);
 
 // YOUR CODE HERE ------------------------
-
+function getPrintNumberFunction(num){
+  var num;
+  return function(){
+    console.log(num);
+  }
+}
 
 
 // ---------------------------------------
